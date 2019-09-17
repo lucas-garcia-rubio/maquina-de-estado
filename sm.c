@@ -1,4 +1,3 @@
-//Pergunta - e se por acaso a soma do checksum estourar?
 # include "sm.h"
 # include <stdio.h>
 # include <stdlib.h>
@@ -20,7 +19,7 @@ static void fnADDR(sm_t *sm, char addr){
         if(sm->my_addr == sm->my_addr_receive)
             sm->state = ST_QTD;
         else
-            printf("Erro no endereço\n");
+            printf("Erro no endereÃ§o\n");
     }
 }
 
@@ -62,7 +61,7 @@ void InitSM(sm_t *sm, short addr, handle_t handle){
     sm->action[ST_QTD] = (action_t)fnQTD;
     sm->action[ST_DATA] = (action_t)fnDATA;
     sm->action[ST_CHK] = (action_t)fnCHK;
-    sm->action[ST_END] = (action_t)fnEND; //por que aqui não acusou erro quando tinha declarado com um espaço a menos? sm.h linha 17
+    sm->action[ST_END] = (action_t)fnEND;
     sm->my_addr = addr;
     sm->my_addr_receive = 0;
     sm->chk = 0;
